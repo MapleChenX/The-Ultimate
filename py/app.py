@@ -16,7 +16,11 @@ dataAll = dataLenBytes + dataBytes
 
 for i in range(100):
     s.sendall(dataAll)
+while True:
+    print(1)
 
-s.close()
+
+# 多线程接受服务器的消息
+
 
 

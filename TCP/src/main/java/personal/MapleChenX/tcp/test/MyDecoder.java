@@ -21,6 +21,10 @@ public class MyDecoder extends ByteToMessageDecoder {
             return;
         }
 
+
+        // 目的：虽然人家发的时候是一个一个包发的，但是这些包在TCP层面上会组合为一个流，我们必须进行边界判断；
+        // 而此处标记重置的目的是为了以防万一，因为一个巨大的包可能会被拆分成多个包变成in，而这是不完整的，我们需要等待更多的数据到来，所以我们需要重置读指针，等待更多的字节
+
         in.markReaderIndex();
         // 从输入的ByteBuf中读取一个新的帧
         int length = in.readInt();
@@ -39,3 +43,4 @@ public class MyDecoder extends ByteToMessageDecoder {
         out.add(message);
     }
 }
+
