@@ -9,6 +9,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class S {
     public static void main(String[] args) {
@@ -20,8 +21,8 @@ public class S {
             .childHandler(new ChannelInitializer<SocketChannel>() {
                 @Override
                 protected void initChannel(SocketChannel ch) throws Exception {
-                    ch.pipeline().addLast(new StringEncoder(Charset.forName("GBK")));
-                    ch.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
+                    ch.pipeline().addLast(new StringEncoder(StandardCharsets.UTF_8));
+                    ch.pipeline().addLast(new MyDecoder());
                     ch.pipeline().addLast(new MyHandler());
                 }
             });
