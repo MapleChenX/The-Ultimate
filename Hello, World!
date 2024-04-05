@@ -7,10 +7,3 @@
     · in.readableBytes(); // 获取可读字节数
     · in.resetReaderIndex(); // 重置读取位置
     总结：markReaderIndex只在读取最前面的时候使用，后续操作字节数不够了就直接回档，就像事务一样，保证原子化，保证in的数据不会丢失
-4 私有协议
-    · 协议
-        · cmdType(4字节) + filenameLen(4字节) + filename + contentLen(4字节) + content
-    · 脚本
-        · bytes(filename, 'utf-8') // string转为byte数组
-        · filenameLen.to_bytes(4, byteorder='big') // int转为4字节的byte数组
-    
