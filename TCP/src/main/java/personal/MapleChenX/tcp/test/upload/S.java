@@ -1,13 +1,10 @@
-package personal.MapleChenX.tcp.upload;
+package personal.MapleChenX.tcp.test.upload;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.string.StringEncoder;
-
-import java.nio.charset.StandardCharsets;
 
 public class S {
     public static void main(String[] args) {

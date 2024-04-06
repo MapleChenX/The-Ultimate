@@ -1,4 +1,4 @@
-package personal.MapleChenX.tcp.upload;
+package personal.MapleChenX.tcp.test.upload;
 
 import lombok.Data;
 
